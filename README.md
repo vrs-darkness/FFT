@@ -20,9 +20,11 @@ where:
 ### Inverse Fourier Transform
 
 To convert back from the frequency domain to the time domain, the Inverse Fourier Transform is used:
+
 $$
 \[ f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(\omega) e^{j\omega t} \, d\omega \]
 $$
+
 ## Introduction to Fast Fourier Transform
 
 The Fast Fourier Transform (FFT) is an efficient algorithm to compute the Discrete Fourier Transform (DFT) and its inverse. The DFT is a fundamental transform in digital signal processing, but it can be computationally intensive for large datasets. The FFT significantly reduces the complexity of computing the DFT, making it practical for real-time and large-scale applications.
@@ -30,17 +32,21 @@ The Fast Fourier Transform (FFT) is an efficient algorithm to compute the Discre
 ### Definition
 
 Given a sequence of $\( N \)$ complex numbers $\( x_0, x_1, \ldots, x_{N-1} \)$, the DFT is defined as:
+
 $$
 \[ X_k = \sum_{n=0}^{N-1} x_n e^{-j \frac{2\pi}{N} kn} \]
 $$
+
 for $\( k = 0, 1, \ldots, N-1 \).$
 
 ### Inverse Discrete Fourier Transform
 
 The inverse transform, converting frequency-domain data back to the time domain, is given by:
+
 $$
 \[ x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k e^{j \frac{2\pi}{N} kn} \]
 $$
+
 ### Efficiency of FFT
 
 The FFT algorithm reduces the computational complexity from $\( O(N^2) \)$ in the naive DFT calculation to $\( O(N \log N) \)$. This efficiency gain is achieved by recursively breaking down the DFT into smaller DFTs, exploiting symmetries, and reusing calculations.
